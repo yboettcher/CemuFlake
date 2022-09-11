@@ -1,0 +1,185 @@
+{
+  "nodes": {
+    "cemu_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662871279,
+        "narHash": "sha256-vIICX/oDWhtK9Da5yCL5vhSXOLziB1EX34+JUwgUMTg=",
+        "owner": "cemu-project",
+        "repo": "Cemu",
+        "rev": "0afa2d75aa24801287e41e182ea359c0c35523da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cemu-project",
+        "ref": "main",
+        "repo": "Cemu",
+        "type": "github"
+      }
+    },
+    "cubeb_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1658421279,
+        "narHash": "sha256-pkWEnD5RqWkkyq/6umQ3Oztkxx1wszqa7mEJqvZ7kAo=",
+        "owner": "mozilla",
+        "repo": "cubeb",
+        "rev": "dc511c6b3597b6384d28949285b9289e009830ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mozilla",
+        "repo": "cubeb",
+        "rev": "dc511c6b3597b6384d28949285b9289e009830ea",
+        "type": "github"
+      }
+    },
+    "flake_utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "fmt_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661615830,
+        "narHash": "sha256-rP6ymyRc7LnKxUXwPpzhHOQvpJkpnRFOt2ctvUNlYI0=",
+        "owner": "fmtlib",
+        "repo": "fmt",
+        "rev": "a33701196adfad74917046096bf5a2aa0ab0bb50",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fmtlib",
+        "ref": "9.1.0",
+        "repo": "fmt",
+        "type": "github"
+      }
+    },
+    "glslang_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1660318330,
+        "narHash": "sha256-+NKp/4e3iruAcTunpxksvCHxoVYmPd0kFI8JDJJUVg4=",
+        "owner": "KhronosGroup",
+        "repo": "glslang",
+        "rev": "73c9630da979017b2f7e19c6549e2bdb93d9b238",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KhronosGroup",
+        "ref": "11.11.0",
+        "repo": "glslang",
+        "type": "github"
+      }
+    },
+    "imgui_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1655827910,
+        "narHash": "sha256-scG47rRE2qZuYYkgDiA3xnxn/9kQlZLRMb/4UjoknI0=",
+        "owner": "ocornut",
+        "repo": "imgui",
+        "rev": "9aae45eb4a05a5a1f96be1ef37eb503a12ceb889",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ocornut",
+        "ref": "v1.88",
+        "repo": "imgui",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1662818301,
+        "narHash": "sha256-uRjbKN924ptf5CvQ4cfki3R9nIm5EhrJBeb/xUxwfcM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a25f0b9bbdfedee45305da5d1e1410c5bcbd48f6",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "cemu_src": "cemu_src",
+        "cubeb_src": "cubeb_src",
+        "flake_utils": "flake_utils",
+        "fmt_src": "fmt_src",
+        "glslang_src": "glslang_src",
+        "imgui_src": "imgui_src",
+        "nixpkgs": "nixpkgs",
+        "sanitizers_src": "sanitizers_src",
+        "vcpkg_src": "vcpkg_src",
+        "zarchive_src": "zarchive_src"
+      }
+    },
+    "sanitizers_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1535527611,
+        "narHash": "sha256-wEO3hxU1e/SRCWuKOyT2RllRFrC+jucFdyt1EhVEXuw=",
+        "owner": "arsenm",
+        "repo": "sanitizers-cmake",
+        "rev": "aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "arsenm",
+        "repo": "sanitizers-cmake",
+        "rev": "aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a",
+        "type": "github"
+      }
+    },
+    "vcpkg_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1660616689,
+        "narHash": "sha256-OsVDrYC1J6/WzUcBE85RWCueB0+dxCCwbfpTyjqAcPo=",
+        "owner": "microsoft",
+        "repo": "vcpkg",
+        "rev": "acc3bcf76b84ae5041c86ab55fe138ae7b8255c7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "microsoft",
+        "ref": "2022.08.15",
+        "repo": "vcpkg",
+        "type": "github"
+      }
+    },
+    "zarchive_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661568857,
+        "narHash": "sha256-MN8P1zqvOPmXcOgpw4Y0c8AvPQS3nY/HBnwS2HPEsts=",
+        "owner": "Exzap",
+        "repo": "ZArchive",
+        "rev": "48914a07df3c213333c580bb5e5bb3393442ca5b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Exzap",
+        "repo": "ZArchive",
+        "rev": "48914a07df3c213333c580bb5e5bb3393442ca5b",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
