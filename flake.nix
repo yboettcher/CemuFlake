@@ -146,6 +146,11 @@
             version = "0.1.0";
         
             src = cemu_src;
+
+            xdgPatch = pkgs.fetchurl {
+              url = "https://github.com/cemu-project/Cemu/pull/130.diff";
+              sha256 = "045xhwaa4p9n6h75965k79kiyr9a2yv1iv07yra9vi6fpf3c436l";
+            };
             
             nativeBuildInputs = with pkgs; [
               cmake
@@ -180,6 +185,8 @@
               self.packages.${system}.glslang
               self.packages.${system}.fmt
             ];
+
+            patches = [ xdgPatch ];
 
             cmakeFlags = [
               "-DENABLE_VCPKG=OFF"
