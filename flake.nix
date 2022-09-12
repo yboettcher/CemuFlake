@@ -193,8 +193,8 @@
             ];
 
             postInstall = ''
-              mkdir -p $out
-              cp -r ../bin $out/
+              mkdir -p $out/bin
+              cp ../bin/Cemu_release $out/bin/
             '';
           };
 
