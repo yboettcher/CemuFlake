@@ -141,7 +141,7 @@
             ];
           };
           
-          packages.cemu = pkgs.stdenv.mkDerivation {
+          packages.cemu = pkgs.stdenv.mkDerivation rec{
             name = "Cemu Emulator";
             version = "0.1.0";
         
