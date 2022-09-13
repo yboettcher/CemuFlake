@@ -64,6 +64,8 @@
 
             nativeBuildInputs = with pkgs; [ cmake ];
 
+            buildInputs = with pkgs; [ libpulseaudio ];
+
             # for now
             # googletest is a submodule which is broken with flakes
             cmakeFlags = [
@@ -159,6 +161,7 @@
               glslang
               pkgconfig
               nasm
+              makeWrapper
             ];
             
             buildInputs = with pkgs; [
@@ -195,6 +198,11 @@
             postInstall = ''
               mkdir -p $out/bin
               cp ../bin/Cemu_release $out/bin/
+            '';
+
+            postFixup = ''
+              wrapProgram $out/bin/Cemu_release \
+                --prefix LD_LIBRARY_PATH : ${pkgs.libpulseaudio}/lib
             '';
           };
 
