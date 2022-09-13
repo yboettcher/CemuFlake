@@ -202,7 +202,7 @@
 
             postFixup = ''
               wrapProgram $out/bin/Cemu_release \
-                --prefix LD_LIBRARY_PATH : ${pkgs.libpulseaudio}/lib
+                --prefix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath [ pkgs.libpulseaudio pkgs.vulkan-loader ]}
             '';
           };
 
