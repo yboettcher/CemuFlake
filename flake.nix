@@ -62,6 +62,7 @@
               chmod -R 755 cmake/sanitizers-cmake
             '';
 
+            buildInputs = with pkgs; [ libpulseaudio ];
             nativeBuildInputs = with pkgs; [ cmake ];
 
             # for now
@@ -69,6 +70,7 @@
             cmakeFlags = [
               "-DBUILD_TESTS=OFF"
             ];
+
           };
           
           packages.zarchive = pkgs.stdenv.mkDerivation {
@@ -171,6 +173,7 @@
               libpng
               vulkan-headers
               xorg.libXrender
+							makeBinaryWrapper
 
               # custom packages
               self.packages.${system}.wxGTK32
@@ -186,8 +189,10 @@
             ];
 
             postInstall = ''
-              mkdir -p $out
-              cp -r ../bin $out/
+              mkdir -p $out/bin
+              cp ../bin/Cemu_release $out/bin/
+							wrapProgram "$out/bin/Cemu_release" \
+                --prefix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath [ pkgs.libpulseaudio ]}
             '';
           };
 
