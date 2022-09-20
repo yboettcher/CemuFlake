@@ -3,11 +3,11 @@
     "cemu_src": {
       "flake": false,
       "locked": {
-        "lastModified": 1662871279,
-        "narHash": "sha256-vIICX/oDWhtK9Da5yCL5vhSXOLziB1EX34+JUwgUMTg=",
+        "lastModified": 1662908211,
+        "narHash": "sha256-LYMNz+hcz6Z8RlZJO/4LJvBQ6kkQCT4vxKRPS0BczmI=",
         "owner": "cemu-project",
         "repo": "Cemu",
-        "rev": "0afa2d75aa24801287e41e182ea359c0c35523da",
+        "rev": "6cf5dc9a569315969aeaec71f058b4fa8bf16993",
         "type": "github"
       },
       "original": {
