@@ -119,7 +119,7 @@
           
           # updated version of wxwidgets. Cemu wants 3.2.0, nixpkgs only has 3.1.0
           # tried using the -gtk3 variant, but it did not work
-          packages.wxGTK32 = pkgs.wxGTK31.overrideAttrs(old: rec{
+          packages.wxGTK32 = pkgs.wxGTK31-gtk3.overrideAttrs(old: rec{
             version = "3.2.0";
             
             src = pkgs.fetchFromGitHub {
@@ -153,7 +153,7 @@
               url = "https://github.com/cemu-project/Cemu/pull/130.diff";
               sha256 = "045xhwaa4p9n6h75965k79kiyr9a2yv1iv07yra9vi6fpf3c436l";
             };
-            
+
             nativeBuildInputs = with pkgs; [
               cmake
               ninja
@@ -162,6 +162,7 @@
               pkgconfig
               nasm
               makeWrapper
+              wrapGAppsHook
             ];
             
             buildInputs = with pkgs; [
@@ -178,6 +179,7 @@
               glm
               libpng
               vulkan-headers
+              vulkan-loader
               xorg.libXrender
 
               # custom packages
@@ -190,6 +192,10 @@
             ];
 
             patches = [ xdgPatch ];
+
+            postPatch = ''
+              sed -i 's:include_directories(\"dependencies/Vulkan-Headers/include\"):find_package(Vulkan REQUIRED):g' CMakeLists.txt
+            '';
 
             cmakeFlags = [
               "-DENABLE_VCPKG=OFF"
