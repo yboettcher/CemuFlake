@@ -64,7 +64,11 @@
 
             nativeBuildInputs = with pkgs; [ cmake ];
 
-            buildInputs = with pkgs; [ libpulseaudio ];
+            buildInputs = with pkgs; [
+              alsa-lib
+              libjack2
+              libpulseaudio
+            ];
 
             # for now
             # googletest is a submodule which is broken with flakes
@@ -204,12 +208,12 @@
             postInstall = ''
               mkdir -p $out/bin
               cp ../bin/Cemu_release $out/bin/
+              wrapProgram $out/bin/Cemu_release \
+                --prefix LD_LIBRARY_PATH : ${with pkgs; lib.makeLibraryPath [ libpulseaudio vulkan-loader ]} \
+                --prefix XDG_DATA_DIRS : ${with pkgs; lib.concatMapStringsSep ":" glib.getSchemaDataDirPath [ gsettings-desktop-schemas gtk3 ]}
             '';
 
-            postFixup = ''
-              wrapProgram $out/bin/Cemu_release \
-                --prefix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath [ pkgs.libpulseaudio pkgs.vulkan-loader ]}
-            '';
+            meta.mainProgram = "Cemu_release";
           };
 
           defaultPackage = self.packages.${system}.cemu;
